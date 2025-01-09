@@ -13,5 +13,7 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+  ],
+  "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
+  "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
 }
