@@ -15,7 +15,7 @@
     "preset": "ts-jest"
   },
   "jest": {
-    "preset": "ts-jest",
+    "preset": "jest-expo",
     "testPathIgnorePatterns": [
       "<rootDir>/.history/"
     ],
