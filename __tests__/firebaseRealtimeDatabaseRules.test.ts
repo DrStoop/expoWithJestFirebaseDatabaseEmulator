@@ -1,3 +1,16 @@
+// jest.unmock("fs");
+// jest.unmock("@firebase/database");
+// jest.unmock("@firebase/rules-unit-testing");
+// jest.unmock("react-native");
+
+// const {
+//   assertFails,
+//   assertSucceeds,
+//   initializeTestEnvironment,
+//   RulesTestContext,
+//   RulesTestEnvironment,
+// } = jest.requireActual("@firebase/rules-unit-testing");
+
 import {
   assertFails,
   assertSucceeds,
@@ -30,6 +43,7 @@ describe("Can read write", () => {
     authedUser = testEnv.authenticatedContext(USER_ID);
     unauthedUser = testEnv.unauthenticatedContext();
     database = authedUser.database();
+    jest.useFakeTimers({ now: Date.now() });
   });
 
   afterEach(() => {
@@ -52,5 +66,5 @@ describe("Can read write", () => {
     expect(snapshot.val()).toEqual(5);
     // await assertSucceeds(dbRef.update({ QQQQQQQQQ: 4444444444 }));
     // await assertFails(unauthedRef.set({ YYYYYYYYY: 1111111111 }));
-  }); // , 1000000); // Extra time for debugging
+  }, 5000); // , 1000000); // Extra time for debugging
 });
